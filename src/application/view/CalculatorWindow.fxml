@@ -9,16 +9,16 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane fx:id="mainWindow" dividerPositions="0.18100890207715134" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="676.0" prefWidth="617.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CalculatorController">
+<SplitPane fx:id="mainWindow" dividerPositions="0.18100890207715134" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="680.0" prefWidth="620.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CalculatorController">
   <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="118.0" prefWidth="607.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="118.0" prefWidth="607.0" SplitPane.resizableWithParent="false">
          <children>
             <Label fx:id="lblFirstNumber" layoutX="469.0" layoutY="14.0" prefHeight="34.0" prefWidth="124.0" />
             <Label fx:id="lblOperation" layoutX="523.0" layoutY="47.0" prefHeight="25.0" prefWidth="70.0" />
             <Label fx:id="lblSecondNumber" layoutX="477.0" layoutY="76.0" prefHeight="34.0" prefWidth="124.0" />
             <Label fx:id="lblResult" layoutX="36.0" layoutY="30.0" prefHeight="60.0" prefWidth="211.0" />
          </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="508.0" prefWidth="553.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="508.0" prefWidth="553.0" SplitPane.resizableWithParent="false">
          <children>
             <GridPane hgap="5.0" layoutX="14.0" layoutY="7.0" prefHeight="536.0" prefWidth="589.0" vgap="5.0">
               <columnConstraints>
@@ -35,102 +35,102 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="/" textAlignment="CENTER">
+                  <Button fx:id="btnRemainder" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="/" textAlignment="CENTER">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="←" textAlignment="CENTER" GridPane.columnIndex="1">
+                  <Button fx:id="btnBackSpace" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="←" textAlignment="CENTER" GridPane.columnIndex="1">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="C" textAlignment="CENTER" GridPane.columnIndex="2">
+                  <Button fx:id="btnClearAll" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="C" textAlignment="CENTER" GridPane.columnIndex="2">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="÷" textAlignment="CENTER" GridPane.columnIndex="3">
+                  <Button fx:id="btnDivision" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="÷" textAlignment="CENTER" GridPane.columnIndex="3">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="7" textAlignment="CENTER" GridPane.rowIndex="1">
+                  <Button fx:id="btnNumberSeven" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="7" textAlignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="8" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="btnNumberEight" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="8" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="9" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Button fx:id="btnNumberNine" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="9" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="*" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <Button fx:id="btnMultiplication" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="*" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="4" textAlignment="CENTER" GridPane.rowIndex="2">
+                  <Button fx:id="btnNumberFour" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="4" textAlignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="5" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button fx:id="btnNumberFive" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="5" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="6" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Button fx:id="btnNumberSix" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="6" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="-" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                  <Button fx:id="btnSubtraction" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="-" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="1" textAlignment="CENTER" GridPane.rowIndex="3">
+                  <Button fx:id="btnNumberOne" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="1" textAlignment="CENTER" GridPane.rowIndex="3">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="2" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Button fx:id="btnNumberTwo" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="2" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="3" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <Button fx:id="btnNumberThree" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="3" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="+" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                  <Button fx:id="btnAdd" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="+" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="+/-" textAlignment="CENTER" GridPane.rowIndex="4">
+                  <Button fx:id="btnSetPositivOrNegativ" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="+/-" textAlignment="CENTER" GridPane.rowIndex="4">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <Button fx:id="btnNumberZero" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="." textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                  <Button fx:id="btnDotForDouble" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="." textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="=" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                  <Button fx:id="btnEquals" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="107.0" prefWidth="148.0" text="=" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4">
                      <font>
                         <Font size="48.0" />
                      </font>

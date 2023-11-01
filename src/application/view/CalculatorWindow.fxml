@@ -14,9 +14,9 @@
   <items>
       <Pane SplitPane.resizableWithParent="false">
          <children>
-            <Label fx:id="lblResult" layoutX="2.0" layoutY="2.0" prefHeight="111.0" prefWidth="318.0">
+            <Label fx:id="lblResult" layoutX="2.0" layoutY="2.0" prefHeight="59.0" prefWidth="318.0">
                <font>
-                  <Font size="36.0" />
+                  <Font size="18.0" />
                </font></Label>
             <Label fx:id="lblInputNumber" alignment="BASELINE_RIGHT" contentDisplay="RIGHT" layoutX="328.0" layoutY="8.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="280.0" styleClass="lable-alignment" stylesheets="@application.css" textAlignment="RIGHT">
                <font>

@@ -29,10 +29,15 @@ public class CalculatorController implements Initializable {
 	private double result;
 
 	private boolean enteringSecondNumber = false;
+	private boolean isNegativ = false;
+	private boolean isDecimal = false;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		setVariablesForStart();
+		//ToDO 
+//		-clean up
+//		- after calculating result be able to enter number again and continue
 	}
 
 	public void setPrimaryStage(Stage primaryStage) {
@@ -46,6 +51,8 @@ public class CalculatorController implements Initializable {
 		firstNumber = 0;
 		secondNumber = 0;
 		enteringSecondNumber = false;
+		isNegativ = false;
+		isDecimal = false;
 
 	}
 
@@ -74,6 +81,7 @@ public class CalculatorController implements Initializable {
 			lblResult.setText(lblInputNumber.getText());
 			firstNumber = Double.parseDouble(lblResult.getText());
 			lblInputNumber.setText("");
+			isDecimal = false;
 		}
 		operation = calculateButton.getText();
 		lblInputNumber.setText(operation);
@@ -82,30 +90,40 @@ public class CalculatorController implements Initializable {
 
 	@FXML
 	public void calculateResult(ActionEvent event) {
-		secondNumber = Double.parseDouble(lblInputNumber.getText());
-		if (operation.equalsIgnoreCase("+"))
-			setTextAfterCalculation(addNumbers(firstNumber, secondNumber));
-		if (operation.equalsIgnoreCase("-"))
-			setTextAfterCalculation(substractNumbers(firstNumber, secondNumber));
-		if (operation.equalsIgnoreCase("*"))
-			setTextAfterCalculation(multiplyNumbers(firstNumber, secondNumber));
-		if (operation.equalsIgnoreCase("÷"))
-			setTextAfterCalculation(divideNumbers(firstNumber, secondNumber));
-		if (operation.equalsIgnoreCase("/"))
-			setTextAfterCalculation(remainderOfNumbers(firstNumber, secondNumber));
+		if (isNumbersNullOrZero(firstNumber, secondNumber)) {
+			setTextAfterCalculation(0);
+		} else {
+			secondNumber = Double.parseDouble(lblInputNumber.getText());
+			if (operation.equalsIgnoreCase("+"))
+				setTextAfterCalculation(addNumbers(firstNumber, secondNumber));
+			if (operation.equalsIgnoreCase("-"))
+				setTextAfterCalculation(substractNumbers(firstNumber, secondNumber));
+			if (operation.equalsIgnoreCase("*"))
+				setTextAfterCalculation(multiplyNumbers(firstNumber, secondNumber));
+			if (operation.equalsIgnoreCase("÷"))
+				setTextAfterCalculation(divideNumbers(firstNumber, secondNumber));
+			if (operation.equalsIgnoreCase("/"))
+				setTextAfterCalculation(remainderOfNumbers(firstNumber, secondNumber));
+		}
+	}
+
+	public boolean isNumbersNullOrZero(double firstNumber, double secondNumber) {
+		return (String.valueOf(firstNumber).isEmpty() || String.valueOf(secondNumber).isEmpty()||firstNumber == 0 || secondNumber == 0) ? true : false;
+
 	}
 
 	public void setTextAfterCalculation(double result) {
-		lblResult.setText(lblResult.getText() + String.valueOf(secondNumber) + "=" + result);
+		lblInputNumber.setText("" + result);
+		lblResult.setText(lblResult.getText() + String.valueOf(secondNumber) + "=");
 	}
-	
+
 	public double remainderOfNumbers(double firstNumber, double secondNumber) {
-	return firstNumber % secondNumber;
+		return firstNumber % secondNumber;
 	}
 
 	public double divideNumbers(double firstNumber, double secondNumber) {
 		return firstNumber / secondNumber;
-		}
+	}
 
 	public double multiplyNumbers(double firstNumber, double secondNumber) {
 		return firstNumber * secondNumber;
@@ -118,7 +136,7 @@ public class CalculatorController implements Initializable {
 
 	public double substractNumbers(double firstNumber, double secondNumber) {
 		return firstNumber - secondNumber;
-		
+
 	}
 
 	@FXML
@@ -128,12 +146,43 @@ public class CalculatorController implements Initializable {
 
 	@FXML
 	public void setToNegativOrPositiv(ActionEvent event) {
+		if (isNegativ) {
+			isNegativ = false;
+			if (doesContainNegativOrPositivSign(lblInputNumber.getText())) {
+				lblInputNumber.setText(removeFirstChar(lblInputNumber.getText()));
+				changeSignBeforeNumberTo('-');
+			} else {
+				changeSignBeforeNumberTo('-');
+			}
+		} else {
+			isNegativ = true;
+			if (doesContainNegativOrPositivSign(lblInputNumber.getText())) {
+				lblInputNumber.setText(removeFirstChar(lblInputNumber.getText()));
+				changeSignBeforeNumberTo('+');
+			} else {
+				changeSignBeforeNumberTo('+');
+			}
+		}
+	}
 
+	public void changeSignBeforeNumberTo(char charToChangeTo) {
+		lblInputNumber.setText(charToChangeTo + lblInputNumber.getText());
+	}
+
+	public boolean doesContainNegativOrPositivSign(String string) {
+		if (string.contains("-") || string.contains("+")) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	@FXML
 	public void addDecimal(ActionEvent event) {
-
+		if (!isDecimal) {
+			lblInputNumber.setText(lblInputNumber.getText() + '.');
+			isDecimal = true;
+		}
 	}
 
 	@FXML
@@ -141,9 +190,16 @@ public class CalculatorController implements Initializable {
 		setVariablesForStart();
 	}
 
-	private String removeLastChar(String text) {
+	public String removeLastChar(String text) {
 		if (text != null && text.length() > 0) {
 			return text.substring(0, text.length() - 1);
+		}
+		return text;
+	}
+
+	public String removeFirstChar(String text) {
+		if (text != null && text.length() > 0) {
+			return text.substring(1, text.length());
 		}
 		return text;
 	}

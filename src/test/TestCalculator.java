@@ -38,4 +38,24 @@ public class TestCalculator {
 		double expected=1.0;
 		Assert.assertEquals(0, Double.compare(expected, actual));
 	}
+	
+	@Test
+	public void removeLastChar() {
+		String actual =calcObj.removeLastChar("test");
+		String expected="tes";
+		Assert.assertTrue(actual.equals(expected));
+	}
+	
+	@Test
+	public void removeFirstChar() {
+		String actual =calcObj.removeFirstChar("test");
+		String expected="est";
+		Assert.assertTrue(actual.equals(expected));
+	}
+	
+	@Test
+	public void doesContainNegativOrPizitivSign() {
+		String text="-22";
+	Assert.assertTrue(calcObj.doesContainNegativOrPositivSign(text));
+	}
 }

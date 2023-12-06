@@ -35,9 +35,7 @@ public class CalculatorController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		setVariablesForStart();
-		// ToDO
-//		-clean up
-//		- after calculating result be able to enter number again and continue
+
 	}
 
 	public void setPrimaryStage(Stage primaryStage) {
